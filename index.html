@@ -146,7 +146,7 @@ a{text-decoration:none;color:inherit}
 
 /* ===== ROAD JOURNEY (provided design) ===== */
 .rj-section{background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;font-family:'Onest',system-ui,sans-serif;color:#C9D3E0;padding:8vh 0 10vh}
-.rj-head{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px;gap:16px;margin-bottom:24px}
+.rj-head{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px;gap:24px;margin-bottom:24px}
 .rj-kicker{display:inline-flex;align-items:center;font-family:'Onest',system-ui,sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:none;color:#0D1B2A;background:#FFD400;padding:7px 14px;border-radius:999px}
 .rj-title{margin:0;font-family:'Onest',system-ui,sans-serif;font-weight:800;font-size:clamp(22px,6.5vw,32px);line-height:1.05;color:#fff;white-space:nowrap}
 .rj-stage-wrap{width:min(1080px,94vw);margin:0 auto}
@@ -857,11 +857,10 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     <!-- HERO panel (sticky) -->
     <div style="position:sticky;top:0;min-height:92vh;min-height:92svh;overflow:hidden;background:radial-gradient(120% 80% at 70% 0%,#1b2c42 0%,#0D1B2A 60%)">
 
-      <!-- header lives inside the hero panel now, not fixed to the
-           viewport — it scrolls away with the hero once the next
-           panel slides over it, instead of persisting on every
-           section. Still solidifies on scroll via JS below. -->
-      <div class="ylo-head" style="position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px 18px;transition:background .3s ease,box-shadow .3s ease,padding .3s ease;background:transparent">
+      <!-- header is fixed to the viewport, persists across the
+           entire mobile-story scroll instead of scrolling away
+           with the hero. Still solidifies on scroll via JS below. -->
+      <div class="ylo-head" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 18px;transition:background .3s ease,box-shadow .3s ease,padding .3s ease;background:transparent">
         <div style="display:flex;align-items:center;gap:9px">
           <img src="images/logo-footer.png" alt="Ylopage" style="height:26px;width:auto">
         </div>
@@ -882,10 +881,13 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
           <span style="width:7px;height:7px;border-radius:50%;background:#FFD400;animation:yblink 1.3s ease-in-out infinite"></span>Launching Soon
         </span>
         <h1 style="font-size:30px;font-weight:700;line-height:1.14;letter-spacing:-.02em;color:#fff;margin:0">Find Trusted Local<br>Service Providers<br><span style="color:#FFD400">In One Place</span></h1>
-        <p style="font-size:13.5px;color:#9eabbd;font-weight:500;margin:16px 0 0;max-width:280px">Connect with verified professionals near you.<br>From home services to personal care — all in one platform.</p>
-        <form data-form="early_access" id="mobileHeroForm" novalidate style="display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 6px 6px 16px;margin-top:26px;width:300px;max-width:84vw;backdrop-filter:blur(8px)">
-          <input type="email" name="email" required placeholder="Enter your email" style="flex:1;min-width:0;border:none;outline:none;background:transparent;color:#fff;font-family:inherit;font-size:13px">
-          <button type="submit" style="border:none;background:#FFD400;color:#0D1B2A;font-family:inherit;font-weight:700;font-size:12.5px;padding:11px 16px;border-radius:999px;white-space:nowrap">Get access</button>
+        <p style="font-size:13.5px;color:#9eabbd;font-weight:500;margin:16px 0 0;max-width:280px">From home services to personal care — all in one platform.</p>
+        <form data-form="early_access" id="mobileHeroForm" novalidate style="margin-top:26px;width:300px;max-width:84vw">
+          <div id="mobileHeroWrap" style="display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 6px 6px 16px;backdrop-filter:blur(8px)">
+            <input type="email" name="email" id="mobileHeroEmail" required placeholder="Enter your email" style="flex:1;min-width:0;border:none;outline:none;background:transparent;color:#fff;font-family:inherit;font-size:13px">
+            <button type="submit" style="border:none;background:#FFD400;color:#0D1B2A;font-family:inherit;font-weight:700;font-size:12.5px;padding:11px 16px;border-radius:999px;white-space:nowrap">Get access</button>
+          </div>
+          <span id="mobileHeroErr" style="display:none;font-size:.78rem;color:#ff8080;margin-top:6px;font-weight:500;padding-left:14px">Please enter a valid email address.</span>
         </form>
       </div>
       <div style="position:absolute;bottom:max(56px,env(safe-area-inset-bottom));left:46%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;animation:ybob 1.8s ease-in-out infinite">
@@ -895,7 +897,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- SERVICES SHOWCASE (was INTRO + STATS) -->
-    <div class="merge-panel" data-radius="36" style="position:sticky;top:0;border-radius:36px 36px 0 0;background:#FFE000;box-shadow:0 -18px 44px rgba(0,0,0,.4);padding:34px 22px 40px;text-align:center;overflow:hidden;margin-top:-40px">
+    <div class="merge-panel" data-radius="36" style="position:sticky;top:0;border-radius:36px 36px 0 0;background:#FFE000;box-shadow:0 -18px 44px rgba(0,0,0,.4);padding:86px 22px 40px;text-align:center;overflow:hidden;margin-top:-40px">
 
       <!-- dot texture, rotated so the dots line up on a diagonal instead of a straight grid -->
       <div style="position:absolute;top:-25%;left:-25%;width:150%;height:150%;transform:rotate(18deg);background-image:radial-gradient(rgba(13,27,42,.05) 1px,transparent 1px),radial-gradient(rgba(13,27,42,.035) 1px,transparent 1px);background-size:11px 11px,17px 17px;background-position:0 0,6px 9px;z-index:0"></div>
@@ -943,7 +945,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- PROVIDERS -->
-    <div class="merge-panel" data-radius="34" id="mobileProviders" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;padding:34px 22px 90px;margin-top:-40px">
+    <div class="merge-panel" data-radius="34" id="mobileProviders" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;padding:86px 22px 90px;margin-top:-40px">
       <!-- floating icons above the heading -->
       <svg viewBox="0 0 24 24" width="26" height="26" style="position:absolute;top:22px;right:26px;opacity:.12;animation:yfloat 5.6s ease-in-out infinite .2s" fill="none" stroke="#FFD400" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.46.32-.84.73-1.04a4 4 0 0 0-2.13-7.59 5 5 0 0 0-9.19 0 4 4 0 0 0-2.14 7.59c.41.2.73.58.73 1.04V20a1 1 0 0 0 1 1z"/><path d="M6 17h12"/></svg>
       <svg viewBox="0 0 24 24" width="22" height="22" style="position:absolute;top:64px;left:14px;opacity:.11;animation:yfloat 4.9s ease-in-out infinite .5s" fill="none" stroke="#FFD400" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M2 20h20"/><path d="m10.5 8.5-2 2 2 2"/><path d="m13.5 8.5 2 2-2 2"/></svg>
@@ -951,10 +953,10 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
       <h2 class="rv" style="font-size:24px;font-weight:700;color:#fff;letter-spacing:-.01em;margin:14px 0 6px;line-height:1.2">Grow Your <span style="color:#FFD400">Business</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;stroke:#FFD400"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-3-3-4 4"></path></svg></h2>
       <p class="rv" style="font-size:12.5px;color:#9eabbd;margin:0 0 20px">Join our platform at launch and connect with customers in your area. Share the form details, our team will reach you to get you onboarded as a service provider.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 9h12M7 4c4 0 6 2 6 5s-2 5-6 5H6l8 7"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your Brand, Your Rates</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Control pricing</div></div>
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your Schedule</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Work when you want</div></div>
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Nation-Wide Reach</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Nearby clients</div></div>
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Build Reputation</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Through authorized reviews</div></div>
+        <div class="prov-roll" style="background:linear-gradient(135deg, rgb(255, 246, 194), rgb(255, 240, 174));border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 9h12M7 4c4 0 6 2 6 5s-2 5-6 5H6l8 7"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your Brand, Your Rates</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Control pricing</div></div>
+        <div class="prov-roll" style="background:linear-gradient(135deg, rgb(255, 246, 194), rgb(255, 240, 174));border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your Schedule</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Work when you want</div></div>
+        <div class="prov-roll" style="background:linear-gradient(135deg, rgb(255, 246, 194), rgb(255, 240, 174));border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Nation-Wide Reach</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Nearby clients</div></div>
+        <div class="prov-roll" style="background:linear-gradient(135deg, rgb(255, 246, 194), rgb(255, 240, 174));border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Build Reputation</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Through authorized reviews</div></div>
       </div>
       <button type="button" id="providerCtaBtn" class="rv cta-pulse" onclick="openProviderModal()" style="margin-top:20px;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;width:100%;box-sizing:border-box;border:none;background:linear-gradient(135deg,#FFE566,#FFD400);color:#0D1B2A;font-family:inherit;font-weight:800;font-size:14.5px;padding:17px;border-radius:14px;cursor:pointer;box-shadow:0 10px 26px rgba(255,212,0,.35)">
         Join as Provider
@@ -986,7 +988,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- WHY CHOOSE -->
-    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFFDF7;padding:34px 22px 150px;margin-top:-40px">
+    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFFDF7;padding:86px 22px 150px;margin-top:-40px">
       <div style="text-align:center;margin-bottom:22px">
         <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Why Choose Us</span>
         <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 6px">Your Skills Deserve Clients</h2>
@@ -1070,8 +1072,8 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- EARLY BENEFITS -->
-    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFE000;background-image:radial-gradient(rgba(13,27,42,.06) 1.3px,transparent 1.3px);background-size:18px 18px;padding:34px 22px 110px;text-align:center;margin-top:-40px">
-      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Early Adopter Perks</span>
+    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFE000;background-image:radial-gradient(rgba(13,27,42,.06) 1.3px,transparent 1.3px);background-size:18px 18px;padding:86px 22px 110px;text-align:center;margin-top:-40px">
+      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Early Adopter Benefits</span>
       <h2 class="rv" style="font-size:22px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 20px">Onboard Early, Unlock Perks</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;text-align:left">
         <div class="perk-card" style="transition-delay:0s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-1a6 6 0 0 1 6-6h1M16 16l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Free Identity Verification</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">For the first 1,000 providers.</p></div>
@@ -1085,7 +1087,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- SAFETY -->
-    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFFDF7;padding:34px 22px 90px;text-align:center;margin-top:-40px">
+    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFFDF7;padding:86px 22px 90px;text-align:center;margin-top:-40px">
       <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Trust &amp; Safety</span>
       <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 20px">Your Safety Is Our Priority</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;text-align:left">
@@ -1097,7 +1099,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- YOUR IDEAS MATTER (feedback) -->
-    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;padding:34px 22px 64px;text-align:center;margin-top:-40px">
+    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;padding:86px 22px 64px;text-align:center;margin-top:-40px">
       <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#0D1B2A;background:#FFD400;padding:7px 14px;border-radius:999px">We're Listening</span>
       <h2 class="rv" style="font-size:23px;font-weight:800;color:#fff;letter-spacing:-.01em;margin:14px 0 10px">Your Ideas <span style="color:#FFD400">Matter</span></h2>
       <p class="rv" style="font-size:13px;color:#9eabbd;margin:0 auto 26px;max-width:280px">Share your feedback and unlock cool perks as we all grow together.</p>
@@ -1108,7 +1110,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- APP COMING SOON -->
-    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:linear-gradient(135deg,#FFF6C2,#FFF0AE);padding:34px 22px 64px;text-align:center;margin-top:-40px">
+    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:linear-gradient(135deg,#FFF6C2,#FFF0AE);padding:86px 22px 64px;text-align:center;margin-top:-40px">
       <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Coming Soon</span>
       <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 6px">The Mobile App</h2>
       <p class="rv" style="font-size:12.5px;color:#6b6019;margin:0 0 18px;max-width:280px;margin-left:auto;margin-right:auto">Access local services anytime, anywhere — a seamless mobile experience.</p>
@@ -1131,9 +1133,12 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
       <span class="rv" style="display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FFD400;border:1.5px solid rgba(255,212,0,.4);padding:6px 12px;border-radius:999px">Limited Slots</span>
       <h2 class="rv" style="font-size:27px;font-weight:700;color:#fff;letter-spacing:-.01em;margin:16px 0 8px;line-height:1.2">Be Among The<br><span style="color:#FFD400">First 5,000</span></h2>
       <p class="rv" style="font-size:12.5px;color:#9eabbd;margin:0 auto 20px;max-width:280px">Join our waitlist and get early customer access benefits when we launch.</p>
-      <form data-form="limited_slots" id="mobileFinalForm" novalidate class="rv" style="display:flex;align-items:center;gap:7px;background:#152437;border:1px solid #28384f;border-radius:999px;padding:6px 6px 6px 16px;max-width:330px;margin:0 auto">
-        <input type="email" name="email" required placeholder="Enter your email" style="flex:1;min-width:0;border:none;outline:none;background:transparent;color:#fff;font-family:inherit;font-size:13px">
-        <button type="submit" style="border:none;background:#FFD400;color:#0D1B2A;font-family:inherit;font-weight:700;font-size:12.5px;padding:11px 16px;border-radius:999px;white-space:nowrap">Get access</button>
+      <form data-form="limited_slots" id="mobileFinalForm" novalidate class="rv" style="max-width:330px;margin:0 auto">
+        <div style="display:flex;align-items:center;gap:7px;background:#152437;border:1px solid #28384f;border-radius:999px;padding:6px 6px 6px 16px">
+          <input type="email" name="email" id="mobileFinalEmail" required placeholder="Enter your email" style="flex:1;min-width:0;border:none;outline:none;background:transparent;color:#fff;font-family:inherit;font-size:13px">
+          <button type="submit" style="border:none;background:#FFD400;color:#0D1B2A;font-family:inherit;font-weight:700;font-size:12.5px;padding:11px 16px;border-radius:999px;white-space:nowrap">Get access</button>
+        </div>
+        <p id="mobileFinalErr" style="display:none;font-size:.78rem;color:#ff8080;margin:8px 0 0;font-weight:500;padding-left:14px;text-align:left">Please enter a valid email address.</p>
       </form>
       <p class="rv" style="font-size:10.5px;color:#5a6878;margin:14px 0 0">No spam. We'll only email you when we launch.</p>
 
@@ -1142,12 +1147,8 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px">
           <img src="images/logo-footer.png" alt="Ylopage" style="height:28px;width:auto">
         </div>
-        <p style="font-size:11.5px;color:#9eabbd;margin:0 0 4px;line-height:1.6;max-width:280px">Connecting you with trusted local service providers. Launching soon.</p>
-        <p style="font-size:10px;color:rgba(255,224,0,.4);letter-spacing:.03em;font-weight:500;margin:0 0 16px">Real Professionals · Real Brands · One Platform</p>
-        <div style="display:flex;gap:10px;margin-bottom:24px">
-          <a href="https://www.linkedin.com/company/ylopage" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:10px;background:#152437;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#9eabbd" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg></a>
-          <a href="#" aria-label="Instagram" onclick="showInstaPopup(event)" style="width:36px;height:36px;border-radius:10px;background:#152437;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#9eabbd" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg></a>
-        </div>
+        <p style="font-size:11.5px;color:#9eabbd;margin:0 0 4px;line-height:1.6;max-width:280px">Connecting you with trusted local service providers.</p>
+        <p style="font-size:10px;color:rgba(255,224,0,.4);letter-spacing:.03em;font-weight:500;margin:0 0 24px">Real Professionals · Real Brands · One Platform</p>
         <div style="display:flex;justify-content:space-between;width:100%">
           <div>
             <div style="font-size:12px;font-weight:600;color:#fff;margin-bottom:12px">Legal</div>
@@ -1155,6 +1156,10 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
               <a href="privacy.html" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Privacy Policy</a>
               <a href="terms.html" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Terms</a>
               <a href="disclaimer.html" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Disclaimer</a>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:18px">
+              <a href="https://www.linkedin.com/company/ylopage" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:10px;background:#152437;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#9eabbd" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg></a>
+              <a href="#" aria-label="Instagram" onclick="showInstaPopup(event)" style="width:36px;height:36px;border-radius:10px;background:#152437;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#9eabbd" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg></a>
             </div>
           </div>
           <div>
@@ -1168,7 +1173,8 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
             </div>
           </div>
         </div>
-        <div style="border-top:1px solid #1e2f47;margin-top:24px;padding-top:18px;padding-bottom:8px;text-align:center;font-size:10.5px;color:#5a6878">© 2026 Ylopage. All rights reserved.</div>
+        <div style="display:flex;justify-content:center;margin-top:28px"><span style="font-size:10.5px;font-weight:600;letter-spacing:.06em;color:#FFD400">Launching Soon</span></div>
+        <div style="border-top:1px solid #1e2f47;margin-top:14px;padding-top:18px;padding-bottom:8px;text-align:center;font-size:10.5px;color:#5a6878">© 2026 Ylopage. All rights reserved.</div>
       </div>
     </div>
 
@@ -1978,7 +1984,7 @@ function showToast(msg){
 })();
 
 /* ---- Other forms (early_access, feedback) ---- */
-document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm):not(#limitedSlotsForm):not([data-form="feedback"])').forEach(form=>{
+document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm):not(#limitedSlotsForm):not(#mobileHeroForm):not(#mobileFinalForm):not([data-form="feedback"])').forEach(form=>{
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     const btn=form.querySelector('button[type=submit]');
@@ -2059,6 +2065,76 @@ document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm
   if(!form) return;
   const input = document.getElementById('limitedEmail');
   const errEl = document.getElementById('limitedEmailErr');
+
+  input.addEventListener('input', () => { if(errEl) errEl.style.display='none'; });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const val = input.value.trim();
+    const ok  = val.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    if(!ok){
+      if(errEl) errEl.style.display='block';
+      input.focus();
+      return;
+    }
+    if(errEl) errEl.style.display='none';
+    const btn = form.querySelector('button[type=submit]');
+    const orig = btn.textContent; btn.textContent='...'; btn.disabled=true;
+    try{
+      if(typeof SHEET_ENDPOINT!=='undefined' && SHEET_ENDPOINT.startsWith('http')){
+        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'limited_slots',email:val})});
+      }
+      showToast('You are on the list. We will be in touch.');
+      form.reset();
+    }catch(err){ showToast('Something went wrong. Please try again.'); }
+    finally{ btn.textContent=orig; btn.disabled=false; }
+  });
+})();
+
+/* ---- Mobile hero form validation (same rule as desktop) ---- */
+(function(){
+  const form  = document.getElementById('mobileHeroForm');
+  if(!form) return;
+  const input = document.getElementById('mobileHeroEmail');
+  const wrap  = document.getElementById('mobileHeroWrap');
+  const errEl = document.getElementById('mobileHeroErr');
+
+  input.addEventListener('input', () => {
+    if(errEl) errEl.style.display='none';
+    if(wrap) wrap.style.borderColor='rgba(255,255,255,.16)';
+  });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const val = input.value.trim();
+    const ok  = val.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    if(!ok){
+      if(errEl) errEl.style.display='block';
+      if(wrap) wrap.style.borderColor='#ff8080';
+      input.focus();
+      return;
+    }
+    if(errEl) errEl.style.display='none';
+    if(wrap) wrap.style.borderColor='rgba(255,255,255,.16)';
+    const btn = form.querySelector('button[type=submit]');
+    const orig = btn.textContent; btn.textContent='...'; btn.disabled=true;
+    try{
+      if(typeof SHEET_ENDPOINT!=='undefined' && SHEET_ENDPOINT.startsWith('http')){
+        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'early_access',email:val})});
+      }
+      showToast('You are on the list. We will be in touch.');
+      form.reset();
+    }catch(err){ showToast('Something went wrong. Please try again.'); }
+    finally{ btn.textContent=orig; btn.disabled=false; }
+  });
+})();
+
+/* ---- Mobile final CTA form validation (same rule as desktop) ---- */
+(function(){
+  const form  = document.getElementById('mobileFinalForm');
+  if(!form) return;
+  const input = document.getElementById('mobileFinalEmail');
+  const errEl = document.getElementById('mobileFinalErr');
 
   input.addEventListener('input', () => { if(errEl) errEl.style.display='none'; });
 
@@ -2290,17 +2366,6 @@ document.getElementById('instaPopup').addEventListener('click',function(e){
       head.style.backdropFilter = solid ? 'blur(10px)' : 'none';
       head.style.boxShadow = solid ? '0 4px 18px rgba(0,0,0,.3)' : 'none';
       if(name) name.style.opacity = solid ? '1' : '0';
-
-      // Fade the header out well before hero finishes scrolling away,
-      // so it's gone before the next panel starts peeking through —
-      // rather than lingering all the way to the very end of hero's
-      // sticky hold, which is what was happening before.
-      var heroHeight = window.innerHeight * 0.92;
-      var fadeStart = heroHeight * 0.5;
-      var fadeEnd = heroHeight * 0.78;
-      var headOpacity = 1 - Math.min(1, Math.max(0, (window.scrollY - fadeStart) / (fadeEnd - fadeStart)));
-      head.style.opacity = headOpacity.toFixed(2);
-      head.style.pointerEvents = headOpacity < 0.05 ? 'none' : 'auto';
     }
     requestAnimationFrame(loop);
   }
