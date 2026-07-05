@@ -145,7 +145,7 @@ a{text-decoration:none;color:inherit}
 @keyframes ctaNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
 
 /* ===== ROAD JOURNEY (provided design) ===== */
-.rj-section{background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;font-family:'Onest',system-ui,sans-serif;color:#C9D3E0;padding:8vh 0 24vh}
+.rj-section{background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;font-family:'Onest',system-ui,sans-serif;color:#C9D3E0;padding:8vh 0 10vh}
 .rj-head{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px;gap:16px;margin-bottom:24px}
 .rj-kicker{display:inline-flex;align-items:center;font-family:'Onest',system-ui,sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:none;color:#0D1B2A;background:#FFD400;padding:7px 14px;border-radius:999px}
 .rj-title{margin:0;font-family:'Onest',system-ui,sans-serif;font-weight:800;font-size:clamp(22px,6.5vw,32px);line-height:1.05;color:#fff;white-space:nowrap}
@@ -156,6 +156,7 @@ a{text-decoration:none;color:inherit}
 .rj-card-inner{background:#1B263B;border:1px solid #2C3E55;border-radius:12px;padding:10px 11px;box-shadow:0 10px 26px rgba(0,0,0,.45)}
 .rj-card-head{display:flex;align-items:center;gap:6px;margin-bottom:4px}
 .rj-card-num{flex:none;width:19px;height:19px;border-radius:999px;background:#FFD60A;color:#0D1B2A;font-family:'Onest',system-ui,sans-serif;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;overflow:hidden;line-height:1}
+.rj-card-num svg{position:static;inset:auto;width:13px;height:13px}
 .rj-card-title{font-family:'Onest',system-ui,sans-serif;font-weight:700;font-size:12px;color:#FFD60A}
 .rj-card-desc{font-size:10px;line-height:1.4;color:#A9B8CC}
 .rj-marker-stroke{transition:stroke .4s}
@@ -864,7 +865,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
         <div style="display:flex;align-items:center;gap:9px">
           <img src="images/logo-footer.png" alt="Ylopage" style="height:26px;width:auto">
         </div>
-        <button type="button" onclick="goToProviderCta()" style="border:none;background:#FFD400;color:#0D1B2A;font-family:inherit;font-weight:700;font-size:11.5px;padding:8px 12px;border-radius:999px;text-decoration:none;cursor:pointer;white-space:nowrap">Join as provider</button>
+        <button type="button" onclick="goToProviderCta()" style="border:none;background:#FFD400;color:#0D1B2A;font-family:inherit;font-weight:700;font-size:11.5px;padding:8px 12px;border-radius:999px;text-decoration:none;cursor:pointer;white-space:nowrap">Join as Provider</button>
       </div>
 
       <svg viewBox="0 0 24 24" width="46" height="46" style="position:absolute;top:150px;left:32px;opacity:.16;animation:yfloat 6s ease-in-out infinite" fill="none" stroke="#FFD400" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>
@@ -878,16 +879,16 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
       <svg viewBox="0 0 24 24" width="26" height="26" style="position:absolute;bottom:92px;right:52px;opacity:.10;animation:yfloat 5.2s ease-in-out infinite .45s" fill="none" stroke="#FFD400" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16.75 12h3.63a1 1 0 0 1 .9 1.45l-2.04 4.07a1 1 0 0 1-1.7.13l-2.13-2.97"/><path d="M17.1 9.05a1 1 0 0 1 .45 1.34l-3.1 6.21a1 1 0 0 1-1.35.45L3.6 12.3a2.92 2.92 0 0 1-1.3-3.91L3.7 5.6a2.92 2.92 0 0 1 3.9-1.3z"/><path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15"/><path d="M2 21v-4"/><path d="M7 9h.01"/></svg>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:110px 28px 0">
         <span style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#FFD400;margin-bottom:22px">
-          <span style="width:7px;height:7px;border-radius:50%;background:#FFD400;animation:yblink 1.3s ease-in-out infinite"></span>Launching 2026
+          <span style="width:7px;height:7px;border-radius:50%;background:#FFD400;animation:yblink 1.3s ease-in-out infinite"></span>Launching Soon
         </span>
-        <h1 style="font-size:30px;font-weight:700;line-height:1.14;letter-spacing:-.02em;color:#fff;margin:0">Find trusted local<br>service providers<br><span style="color:#FFD400">in one place</span></h1>
-        <p style="font-size:13.5px;color:#9eabbd;font-weight:500;margin:16px 0 0;max-width:280px">Connect with verified professionals near you. From home services to personal care — all in one platform.</p>
+        <h1 style="font-size:30px;font-weight:700;line-height:1.14;letter-spacing:-.02em;color:#fff;margin:0">Find Trusted Local<br>Service Providers<br><span style="color:#FFD400">In One Place</span></h1>
+        <p style="font-size:13.5px;color:#9eabbd;font-weight:500;margin:16px 0 0;max-width:280px">Connect with verified professionals near you.<br>From home services to personal care — all in one platform.</p>
         <form data-form="early_access" id="mobileHeroForm" novalidate style="display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 6px 6px 16px;margin-top:26px;width:300px;max-width:84vw;backdrop-filter:blur(8px)">
           <input type="email" name="email" required placeholder="Enter your email" style="flex:1;min-width:0;border:none;outline:none;background:transparent;color:#fff;font-family:inherit;font-size:13px">
           <button type="submit" style="border:none;background:#FFD400;color:#0D1B2A;font-family:inherit;font-weight:700;font-size:12.5px;padding:11px 16px;border-radius:999px;white-space:nowrap">Get access</button>
         </form>
       </div>
-      <div style="position:absolute;bottom:max(56px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;animation:ybob 1.8s ease-in-out infinite">
+      <div style="position:absolute;bottom:max(56px,env(safe-area-inset-bottom));left:46%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;animation:ybob 1.8s ease-in-out infinite">
         <span style="font-size:10px;font-weight:600;text-transform:uppercase;color:rgba(255,255,255,.4)">Scroll</span>
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
       </div>
@@ -909,8 +910,8 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
       <svg viewBox="0 0 24 24" width="22" height="22" style="position:absolute;top:20px;left:190px;opacity:.11;animation:yfloat 4.9s ease-in-out infinite .55s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.2"/></svg>
       <svg viewBox="0 0 24 24" width="26" height="26" style="position:absolute;top:250px;right:150px;opacity:.11;animation:yfloat 5.1s ease-in-out infinite .15s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
 
-      <h2 style="font-size:23px;font-weight:800;letter-spacing:-.02em;color:#0D1B2A;line-height:1.16;margin:0 0 6px;position:relative;z-index:2">Trusted providers,<br>right at your door</h2>
-      <p class="rv" style="font-size:13px;color:#6b6019;margin:0 auto 28px;max-width:280px;position:relative;z-index:2">Verified professionals for every service your home needs.</p>
+      <h2 style="font-size:23px;font-weight:800;letter-spacing:-.02em;color:#0D1B2A;line-height:1.16;margin:0 0 6px;position:relative;z-index:2">Home Solutions Made Easy</h2>
+      <p class="rv" style="font-size:13px;color:#6b6019;margin:0 auto 28px;max-width:280px;position:relative;z-index:2">Connecting with verified professionals near you.</p>
       <div class="wrap_card rv-s" style="position:relative;z-index:1">
         <div class="card"><div class="content"><img id="svcCard1" src="images/service-pedicure2.jpg" alt="Pedicure service at home"></div></div>
         <div class="card"><div class="content"><img id="svcCard2" src="images/service-yoga.jpg" alt="Kids yoga session at home"></div></div>
@@ -946,17 +947,17 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
       <!-- floating icons above the heading -->
       <svg viewBox="0 0 24 24" width="26" height="26" style="position:absolute;top:22px;right:26px;opacity:.12;animation:yfloat 5.6s ease-in-out infinite .2s" fill="none" stroke="#FFD400" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.46.32-.84.73-1.04a4 4 0 0 0-2.13-7.59 5 5 0 0 0-9.19 0 4 4 0 0 0-2.14 7.59c.41.2.73.58.73 1.04V20a1 1 0 0 0 1 1z"/><path d="M6 17h12"/></svg>
       <svg viewBox="0 0 24 24" width="22" height="22" style="position:absolute;top:64px;left:14px;opacity:.11;animation:yfloat 4.9s ease-in-out infinite .5s" fill="none" stroke="#FFD400" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M2 20h20"/><path d="m10.5 8.5-2 2 2 2"/><path d="m13.5 8.5 2 2-2 2"/></svg>
-      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FFD400;border:1.5px solid rgba(255,212,0,.4);padding:6px 12px;border-radius:999px">For service providers</span>
-      <h2 class="rv" style="font-size:24px;font-weight:700;color:#fff;letter-spacing:-.01em;margin:14px 0 6px;line-height:1.2">Grow your <span style="color:#FFD400">business</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;stroke:#FFD400"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-3-3-4 4"></path></svg></h2>
+      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FFD400;border:1.5px solid rgba(255,212,0,.4);padding:6px 12px;border-radius:999px">For Service Providers</span>
+      <h2 class="rv" style="font-size:24px;font-weight:700;color:#fff;letter-spacing:-.01em;margin:14px 0 6px;line-height:1.2">Grow Your <span style="color:#FFD400">Business</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;stroke:#FFD400"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-3-3-4 4"></path></svg></h2>
       <p class="rv" style="font-size:12.5px;color:#9eabbd;margin:0 0 20px">Join our platform at launch and connect with customers in your area. Share the form details, our team will reach you to get you onboarded as a service provider.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 9h12M7 4c4 0 6 2 6 5s-2 5-6 5H6l8 7"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your brand, your rates</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Control pricing</div></div>
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your schedule</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Work when you want</div></div>
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Nation-wide reach</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Nearby clients</div></div>
-        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Build reputation</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Through authorized reviews</div></div>
+        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 9h12M7 4c4 0 6 2 6 5s-2 5-6 5H6l8 7"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your Brand, Your Rates</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Control pricing</div></div>
+        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Your Schedule</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Work when you want</div></div>
+        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Nation-Wide Reach</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Nearby clients</div></div>
+        <div class="prov-roll" style="background:#FFE000;border-radius:14px;padding:13px"><div style="width:30px;height:30px;border-radius:50%;background:rgba(13,27,42,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg></div><div style="font-size:12.5px;font-weight:700;color:#0D1B2A">Build Reputation</div><div style="font-size:10px;color:#6b6019;margin-top:2px">Through authorized reviews</div></div>
       </div>
       <button type="button" id="providerCtaBtn" class="rv cta-pulse" onclick="openProviderModal()" style="margin-top:20px;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;width:100%;box-sizing:border-box;border:none;background:linear-gradient(135deg,#FFE566,#FFD400);color:#0D1B2A;font-family:inherit;font-weight:800;font-size:14.5px;padding:17px;border-radius:14px;cursor:pointer;box-shadow:0 10px 26px rgba(255,212,0,.35)">
-        Join as provider
+        Join as Provider
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#0D1B2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="animation:ctaNudge 1.4s ease-in-out infinite"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
       </button>
 
@@ -979,8 +980,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
               <span style="width:22px;height:22px;border-radius:50%;background:#FFF6C2;border:2px solid #0D1B2A;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#0D1B2A">+</span>
             </div>
           </div>
-          <div style="font-size:12.5px;font-weight:700;color:#fff">Join 500+ providers</div>
-          <div style="font-size:10.5px;color:#9eabbd;margin-top:2px">already growing with Ylopage</div>
+          <div style="font-size:12.5px;font-weight:700;color:#fff;white-space:nowrap">500+ Providers Already onboard</div>
         </div>
       </div>
     </div>
@@ -988,14 +988,14 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     <!-- WHY CHOOSE -->
     <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFFDF7;padding:34px 22px 150px;margin-top:-40px">
       <div style="text-align:center;margin-bottom:22px">
-        <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Why choose us</span>
-        <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 6px">Your skills deserve clients</h2>
+        <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Why Choose Us</span>
+        <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 6px">Your Skills Deserve Clients</h2>
         <p class="rv" style="font-size:12.5px;color:#7a8595;margin:0">Build credibility with quality service.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="why-card" style="background:#FFE000;border-radius:18px;padding:22px;animation-delay:0s"><div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 9h12M7 4c4 0 6 2 6 5s-2 5-6 5H6l8 7"></path></svg></div><div style="font-size:16px;font-weight:700;color:#0D1B2A">Turn your skills into income</div><p style="font-size:12px;color:#6b6019;margin:8px 0 0">Join a trusted marketplace, reach more customers, manage bookings effortlessly, and grow your earnings.</p></div>
+        <div class="why-card" style="background:#FFE000;border-radius:18px;padding:22px;animation-delay:0s"><div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 9h12M7 4c4 0 6 2 6 5s-2 5-6 5H6l8 7"></path></svg></div><div style="font-size:16px;font-weight:700;color:#0D1B2A">Turn Your Skills Into Income</div><p style="font-size:12px;color:#6b6019;margin:8px 0 0">Join a trusted marketplace, reach more customers, manage bookings effortlessly, and grow your earnings.</p></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="why-card" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05);animation-delay:.15s"><div style="width:32px;height:32px;border-radius:50%;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:13px"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0D1B2A" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Profile verification</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Build credibility with a verified profile.</p></div>
+          <div class="why-card" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05);animation-delay:.15s"><div style="width:32px;height:32px;border-radius:50%;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:13px"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0D1B2A" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Profile Verification</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Build credibility with a verified profile.</p></div>
           <div class="why-card" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05);animation-delay:.3s"><div style="width:32px;height:32px;border-radius:50%;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:13px"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_215_440_mobile)">
 <path d="M8.28086 12.9167C8.20647 12.6283 8.05615 12.3651 7.84555 12.1545C7.63494 11.9439 7.37176 11.7936 7.08336 11.7192L1.97086 10.4009C1.88364 10.3761 1.80687 10.3236 1.75221 10.2512C1.69754 10.1789 1.66797 10.0907 1.66797 10C1.66797 9.90937 1.69754 9.82118 1.75221 9.74884C1.80687 9.6765 1.88364 9.62397 1.97086 9.59921L7.08336 8.28004C7.37166 8.20572 7.63477 8.05552 7.84537 7.84508C8.05596 7.63463 8.20634 7.37162 8.28086 7.08338L9.5992 1.97088C9.6237 1.88331 9.67618 1.80616 9.74863 1.75121C9.82108 1.69625 9.90951 1.6665 10.0004 1.6665C10.0914 1.6665 10.1798 1.69625 10.2523 1.75121C10.3247 1.80616 10.3772 1.88331 10.4017 1.97088L11.7192 7.08338C11.7936 7.37177 11.9439 7.63496 12.1545 7.84556C12.3651 8.05616 12.6283 8.20648 12.9167 8.28088L18.0292 9.59838C18.1171 9.62263 18.1946 9.67505 18.2499 9.74761C18.3052 9.82016 18.3351 9.90884 18.3351 10C18.3351 10.0912 18.3052 10.1799 18.2499 10.2525C18.1946 10.325 18.1171 10.3775 18.0292 10.4017L12.9167 11.7192C12.6283 11.7936 12.3651 11.9439 12.1545 12.1545C11.9439 12.3651 11.7936 12.6283 11.7192 12.9167L10.4009 18.0292C10.3764 18.1168 10.3239 18.1939 10.2514 18.2489C10.179 18.3038 10.0905 18.3336 9.99961 18.3336C9.90868 18.3336 9.82025 18.3038 9.7478 18.2489C9.67535 18.1939 9.62287 18.1168 9.59836 18.0292L8.28086 12.9167Z" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1009,17 +1009,17 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
 <rect width="20" height="20" fill="white"/>
 </clipPath>
 </defs>
-</svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Smart matching</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Reach customers searching for you.</p></div>
-          <div class="why-card" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05);animation-delay:.45s"><div style="width:32px;height:32px;border-radius:50%;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:13px"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0D1B2A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Booking management</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Manage schedules &amp; requests with ease.</p></div>
-          <div class="why-card" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05);animation-delay:.6s"><div style="width:32px;height:32px;border-radius:50%;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:13px"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M18 9l-5 5-3-3-4 4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Performance analytics</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Track ratings &amp; growth in one dashboard.</p></div>
+</svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Smart Matching</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Reach customers searching for you.</p></div>
+          <div class="why-card" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05);animation-delay:.45s"><div style="width:32px;height:32px;border-radius:50%;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:13px"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0D1B2A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Booking Management</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Manage schedules &amp; requests with ease.</p></div>
+          <div class="why-card" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05);animation-delay:.6s"><div style="width:32px;height:32px;border-radius:50%;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:13px"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M18 9l-5 5-3-3-4 4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Performance Analytics</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Track ratings &amp; growth in one dashboard.</p></div>
         </div>
       </div>
     </div>
 
     <!-- SERVICES GRID -->
     <div class="merge-panel" data-radius="34" id="mobileServices" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:linear-gradient(135deg, #FFF6C2, #FFF0AE);padding:34px 18px 140px;text-align:center;margin-top:-40px">
-      <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:0 0 6px">Launching with<br>these services</h2>
-      <p class="rv" style="font-size:12.5px;color:#7a8595;margin:0 0 40px;max-width:260px;margin-left:auto;margin-right:auto">Verified professionals across every category your home needs.</p>
+      <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:0 0 6px">Launching With<br>These Services</h2>
+      <p class="rv" style="font-size:12.5px;font-weight:700;color:#7a8595;margin:0 0 40px;white-space:nowrap">Verified Professionals across Every Category</p>
 
       <div style="display:flex;justify-content:center;gap:13px">
         <!-- Left column — offset down -->
@@ -1049,18 +1049,18 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     <div class="merge-panel" data-radius="34" id="mobileHow" style="position:sticky;top:0;border-radius:34px 34px 0 0;overflow:hidden;margin-top:-40px">
       <section class="rj-section" id="rj-section">
         <div class="rj-head">
-          <div class="rj-kicker">For customers</div>
-          <h2 class="rj-title">Simple, fast, reliable</h2>
+          <div class="rj-kicker">For Customers</div>
+          <h2 class="rj-title">Simple, Fast, Reliable</h2>
         </div>
 
         <div class="rj-stage-wrap">
           <div class="rj-stage">
             <svg viewBox="0 0 1200 1150" aria-hidden="true">
-              <path id="rj-path" d="M 525 208 C 615 196 675 232 758 206 C 892 165 1042 275 1000 463 C 972 590 856 648 766 676 C 636 712 526 664 432 700 C 304 748 176 840 192 968 C 204 1058 326 1080 424 1068 C 484 1062 550 1082 600 1075" fill="none" stroke="none"></path>
-              <path d="M 525 208 C 615 196 675 232 758 206 C 892 165 1042 275 1000 463 C 972 590 856 648 766 676 C 636 712 526 664 432 700 C 304 748 176 840 192 968 C 204 1058 326 1080 424 1068 C 484 1062 550 1082 600 1075" fill="none" stroke="#46566B" stroke-width="114" stroke-linecap="round"></path>
-              <path d="M 525 208 C 615 196 675 232 758 206 C 892 165 1042 275 1000 463 C 972 590 856 648 766 676 C 636 712 526 664 432 700 C 304 748 176 840 192 968 C 204 1058 326 1080 424 1068 C 484 1062 550 1082 600 1075" fill="none" stroke="#2E3B4E" stroke-width="98" stroke-linecap="round"></path>
-              <path d="M 525 208 C 615 196 675 232 758 206 C 892 165 1042 275 1000 463 C 972 590 856 648 766 676 C 636 712 526 664 432 700 C 304 748 176 840 192 968 C 204 1058 326 1080 424 1068 C 484 1062 550 1082 600 1075" fill="none" stroke="#5A6E88" stroke-width="4" stroke-dasharray="34 28" stroke-linecap="round" opacity="0.55"></path>
-              <path id="rj-trail" d="M 525 208 C 615 196 675 232 758 206 C 892 165 1042 275 1000 463 C 972 590 856 648 766 676 C 636 712 526 664 432 700 C 304 748 176 840 192 968 C 204 1058 326 1080 424 1068 C 484 1062 550 1082 600 1075" fill="none" stroke="#FFD60A" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 99999" opacity="0.95"></path>
+              <path id="rj-path" d="M 600 65 L 600 1085" fill="none" stroke="none"></path>
+              <path d="M 600 65 L 600 1085" fill="none" stroke="#46566B" stroke-width="114" stroke-linecap="round"></path>
+              <path d="M 600 65 L 600 1085" fill="none" stroke="#2E3B4E" stroke-width="98" stroke-linecap="round"></path>
+              <path d="M 600 65 L 600 1085" fill="none" stroke="#5A6E88" stroke-width="4" stroke-dasharray="34 28" stroke-linecap="round" opacity="0.55"></path>
+              <path id="rj-trail" d="M 600 65 L 600 1085" fill="none" stroke="#FFD60A" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 99999" opacity="0.95"></path>
               <g id="rj-markers"></g>
             </svg>
             <div id="rj-cards"></div>
@@ -1071,34 +1071,34 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
 
     <!-- EARLY BENEFITS -->
     <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFE000;background-image:radial-gradient(rgba(13,27,42,.06) 1.3px,transparent 1.3px);background-size:18px 18px;padding:34px 22px 110px;text-align:center;margin-top:-40px">
-      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Early adopter perks</span>
-      <h2 class="rv" style="font-size:22px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 20px">Onboard early, unlock perks</h2>
+      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Early Adopter Perks</span>
+      <h2 class="rv" style="font-size:22px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 20px">Onboard Early, Unlock Perks</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;text-align:left">
-        <div class="perk-card" style="transition-delay:0s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-1a6 6 0 0 1 6-6h1M16 16l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Free identity verification</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">For the first 1,000 providers.</p></div>
-        <div class="perk-card" style="transition-delay:.1s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L17 6h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><circle cx="12" cy="12" r="3.5"></circle></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Free profile photoshoot</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">Showcase your work professionally.</p></div>
-        <div class="perk-card" style="transition-delay:.2s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"></path><path d="M3 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H7l-4 4z"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Free service verification</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">A thank-you for joining early.</p></div>
+        <div class="perk-card" style="transition-delay:0s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-1a6 6 0 0 1 6-6h1M16 16l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Free Identity Verification</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">For the first 1,000 providers.</p></div>
+        <div class="perk-card" style="transition-delay:.1s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L17 6h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><circle cx="12" cy="12" r="3.5"></circle></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Free Profile Photoshoot</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">Showcase your work professionally.</p></div>
+        <div class="perk-card" style="transition-delay:.2s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"></path><path d="M3 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H7l-4 4z"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Free Service Verification</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">A thank-you for joining early.</p></div>
         <div class="perk-card" style="transition-delay:.3s;background:#fff;border-radius:16px;padding:16px"><div style="width:38px;height:38px;border-radius:50%;background:#FFF6C2;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M5.41602 2.9165H14.5827M5.41602 6.8515H14.5827M11.9093 17.0832L5.41602 10.7865H7.70768C12.8002 10.7865 12.8002 2.9165 7.70768 2.9165" stroke="#0D1B2A" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Zero platform fee</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">Keep more of what you earn.</p></div>
+</svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A;line-height:1.25">Zero Platform<br>Fee</div><p style="font-size:11px;color:#6b6019;margin:6px 0 0">Keep everything of what you earn.</p></div>
       </div>
-      <div class="perk-banner" style="margin-top:14px;background:#0D1B2A;border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;text-align:left"><svg viewBox="0 0 24 24" width="30" height="30" style="flex:none" fill="none" stroke="#FFD400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path><path d="M17 17a3 3 0 1 0-3-3"></path></svg><div><div style="font-size:14px;font-weight:700;color:#fff">Limited spots available</div><p style="font-size:11px;color:#9eabbd;margin:4px 0 0">Providers are onboarded in batches for smooth verification.</p></div></div>
+      <div class="perk-banner" style="margin-top:14px;background:#0D1B2A;border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;text-align:left"><svg viewBox="0 0 67 74" width="28" height="31" style="flex:none" fill="none" stroke="#FFD400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M46.9583 2V15.8333M19.2917 2V15.8333M64.25 36.5833C64.25 23.542 64.25 17.0195 60.1968 12.9698C56.1437 8.92012 49.6247 8.91667 36.5833 8.91667H29.6667C16.6253 8.91667 10.1029 8.91667 6.05317 12.9698C2.00346 17.023 2 23.542 2 36.5833V43.5C2 56.5414 2 63.0638 6.05317 67.1135C10.1063 71.1632 16.6253 71.1667 29.6667 71.1667M2 29.6667H64.25"></path><path d="M54.799 59.7576L50.4173 57.3333V51.34M64.2507 57.3333C64.2507 61.0022 62.7932 64.5207 60.199 67.115C57.6047 69.7092 54.0861 71.1667 50.4173 71.1667C46.7485 71.1667 43.2299 69.7092 40.6357 67.115C38.0414 64.5207 36.584 61.0022 36.584 57.3333C36.584 53.6645 38.0414 50.1459 40.6357 47.5517C43.2299 44.9574 46.7485 43.5 50.4173 43.5C54.0861 43.5 57.6047 44.9574 60.199 47.5517C62.7932 50.1459 64.2507 53.6645 64.2507 57.3333Z"></path></svg><div><div style="font-size:14px;font-weight:700;color:#fff">Limited spots available</div><p style="font-size:11px;color:#9eabbd;margin:4px 0 0">Providers are onboarded in batches for smooth verification.</p></div></div>
     </div>
 
     <!-- SAFETY -->
     <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFFDF7;padding:34px 22px 90px;text-align:center;margin-top:-40px">
-      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Trust &amp; safety</span>
-      <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 20px">Your safety is our priority</h2>
+      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Trust &amp; Safety</span>
+      <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 20px">Your Safety Is Our Priority</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;text-align:left">
-        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Provider verification</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Background checks for all providers.</p></div>
-        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="#0D1B2A" stroke="none"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Review system</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Transparent ratings from real customers.</p></div>
-        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0D1B2A" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Transparent pricing</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">No hidden charges — see exactly what you pay before you book.</p></div>
-        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Customer support</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">A dedicated team ready to help.</p></div>
+        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Provider Verification</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Background checks for all providers.</p></div>
+        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="#0D1B2A" stroke="none"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Review System</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">Transparent ratings from real customers.</p></div>
+        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0D1B2A" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Transparent Pricing</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">No hidden charges — see exactly what you pay before you book.</p></div>
+        <div class="rv-s" style="background:#fff;border:1px solid #f0ead7;border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(13,27,42,.05)"><div style="width:42px;height:42px;border-radius:13px;background:#FFE000;display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0D1B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div><div style="font-size:13px;font-weight:700;color:#0D1B2A">Customer Support</div><p style="font-size:11px;color:#7a8595;margin:6px 0 0">A dedicated team ready to help.</p></div>
       </div>
     </div>
 
     <!-- YOUR IDEAS MATTER (feedback) -->
     <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;padding:34px 22px 64px;text-align:center;margin-top:-40px">
-      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#0D1B2A;background:#FFD400;padding:7px 14px;border-radius:999px">We're listening</span>
+      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#0D1B2A;background:#FFD400;padding:7px 14px;border-radius:999px">We're Listening</span>
       <h2 class="rv" style="font-size:23px;font-weight:800;color:#fff;letter-spacing:-.01em;margin:14px 0 10px">Your Ideas <span style="color:#FFD400">Matter</span></h2>
       <p class="rv" style="font-size:13px;color:#9eabbd;margin:0 auto 26px;max-width:280px">Share your feedback and unlock cool perks as we all grow together.</p>
       <button type="button" class="rv cta-pulse" onclick="openFeedbackModal()" style="display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;width:100%;box-sizing:border-box;border:none;background:linear-gradient(135deg,#FFE566,#FFD400);color:#0D1B2A;font-family:inherit;font-weight:800;font-size:14.5px;padding:17px;border-radius:14px;cursor:pointer;box-shadow:0 10px 26px rgba(255,212,0,.35)">
@@ -1109,8 +1109,8 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
 
     <!-- APP COMING SOON -->
     <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:linear-gradient(135deg,#FFF6C2,#FFF0AE);padding:34px 22px 64px;text-align:center;margin-top:-40px">
-      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Coming soon</span>
-      <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 6px">The mobile app</h2>
+      <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Coming Soon</span>
+      <h2 class="rv" style="font-size:23px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 6px">The Mobile App</h2>
       <p class="rv" style="font-size:12.5px;color:#6b6019;margin:0 0 18px;max-width:280px;margin-left:auto;margin-right:auto">Access local services anytime, anywhere — a seamless mobile experience.</p>
       <div class="rv" style="display:flex;justify-content:center;gap:10px;margin-bottom:22px">
         <div style="display:flex;align-items:center;gap:8px;background:#0D1B2A;color:#fff;padding:10px 14px;border-radius:11px"><svg viewBox="0 0 24 24" width="16" height="16" fill="#fff"><path d="M16.5 12.6c0-2 1.6-3 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.5.8-3.2 2-1.4 2.4-.4 5.9 1 7.8.6.9 1.4 2 2.4 1.9.9 0 1.3-.6 2.4-.6 1.1 0 1.4.6 2.4.6 1 0 1.6-.9 2.2-1.8.7-1 1-2 1-2.1 0 0-1.9-.7-1.9-2.9zM14.6 6.2c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.7-.4 2.3-1.1z"></path></svg><div style="text-align:left;line-height:1.1"><div style="font-size:8px;font-weight:500">Soon on</div><div style="font-size:13px;font-weight:700">App Store</div></div></div>
@@ -1128,8 +1128,8 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
 
     <!-- FINAL CTA + FOOTER -->
     <div style="position:relative;border-radius:34px 34px 0 0;background:#0D1B2A;background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:18px 18px;padding:38px 22px 24px;text-align:center;box-sizing:border-box">
-      <span class="rv" style="display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FFD400;border:1.5px solid rgba(255,212,0,.4);padding:6px 12px;border-radius:999px">Limited slots</span>
-      <h2 class="rv" style="font-size:27px;font-weight:700;color:#fff;letter-spacing:-.01em;margin:16px 0 8px;line-height:1.2">Be among the<br><span style="color:#FFD400">first 5,000</span></h2>
+      <span class="rv" style="display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FFD400;border:1.5px solid rgba(255,212,0,.4);padding:6px 12px;border-radius:999px">Limited Slots</span>
+      <h2 class="rv" style="font-size:27px;font-weight:700;color:#fff;letter-spacing:-.01em;margin:16px 0 8px;line-height:1.2">Be Among The<br><span style="color:#FFD400">First 5,000</span></h2>
       <p class="rv" style="font-size:12.5px;color:#9eabbd;margin:0 auto 20px;max-width:280px">Join our waitlist and get early customer access benefits when we launch.</p>
       <form data-form="limited_slots" id="mobileFinalForm" novalidate class="rv" style="display:flex;align-items:center;gap:7px;background:#152437;border:1px solid #28384f;border-radius:999px;padding:6px 6px 6px 16px;max-width:330px;margin:0 auto">
         <input type="email" name="email" required placeholder="Enter your email" style="flex:1;min-width:0;border:none;outline:none;background:transparent;color:#fff;font-family:inherit;font-size:13px">
@@ -1189,7 +1189,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
 <section class="hero">
   <div class="wrap">
     <span class="pill yellow-text"><span class="dot blink"></span>Launching Soon</span>
-    <h1>Find Trusted Local <span style="white-space:nowrap">Service Providers</span><br>in One Place</h1>
+    <h1>Find Trusted Local <span style="white-space:nowrap">Service Providers</span><br>In One Place</h1>
     <p class="sub">Connect with verified professionals near you.<br>From home services to personal care — all in one platform.</p>
     <form class="email-row" data-form="early_access" id="heroEarlyForm" novalidate>
       <div class="email-row-wrap">
@@ -2515,7 +2515,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <div id="providerModalOverlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(13,27,42,.7);backdrop-filter:blur(4px);align-items:flex-end;justify-content:center">
   <div style="background:#FFFDF7;border-radius:22px 22px 0 0;max-height:88vh;overflow-y:auto;width:100%;padding:22px 18px 32px;position:relative;box-sizing:border-box">
     <button type="button" onclick="closeProviderModal()" aria-label="Close" style="position:absolute;top:12px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:#0D1B2A;border:none;border-radius:9px;font-size:16px;line-height:1;color:#FFD400;cursor:pointer">✕</button>
-    <div style="font-size:16px;font-weight:800;color:#0D1B2A;margin:4px 0 14px;padding-right:44px">Join as provider</div>
+    <div style="font-size:16px;font-weight:800;color:#0D1B2A;margin:4px 0 14px;padding-right:44px">Join as Provider</div>
     <div id="providerFormMount"></div>
   </div>
 </div>
@@ -2554,23 +2554,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
   var L = path.getTotalLength();
 
-  // Locate the 4 stops: start, right bend (max x), left bend
-  // (min x in the later half), end — matches this road's actual
-  // left/right/left/right shape.
-  var N = 400, samples = [];
-  for (var i = 0; i <= N; i++) samples.push(path.getPointAtLength(i / N * L));
-  var f2 = 0, maxX = -1, f3 = 0, minX = 1e9;
-  for (i = 0; i <= N; i++) if (samples[i].x > maxX) { maxX = samples[i].x; f2 = i / N; }
-  for (i = Math.round(N * .55); i <= Math.round(N * .92); i++) if (samples[i].x < minX) { minX = samples[i].x; f3 = i / N; }
-  var F = [0.012, f2, f3, 0.988];
+  // Straight vertical line — 4 stops evenly spaced along it, no
+  // bends to detect anymore.
+  var F = [0.06, 0.36, 0.66, 0.96];
   var pts = F.map(function (f) { return path.getPointAtLength(f * L); });
 
-  // Card placement: above start / inside right bend / inside left bend / right of end
+  // Card placement: alternating sides — 1 & 3 on the left, 2 & 4
+  // on the right of the straight line.
   var PLACE = [
-    { dx: -90, dy: -24, tx: '-100%', ty: '-50%'  },
-    { dx: -90, dy: 24,  tx: '-100%', ty: '-50%'  },
-    { dx: 90,  dy: -24, tx: '0%',    ty: '-50%'  },
-    { dx: 90,  dy: 24,  tx: '0%',    ty: '-50%'  }
+    { dx: -90, dy: 0, tx: '-100%', ty: '-50%'  },
+    { dx: 90,  dy: 0, tx: '0%',    ty: '-50%'  },
+    { dx: -90, dy: 0, tx: '-100%', ty: '-50%'  },
+    { dx: 90,  dy: 0, tx: '0%',    ty: '-50%'  }
   ];
 
   // Icon paths per stop, centered at origin, shown until that
@@ -2587,7 +2582,12 @@ document.addEventListener('DOMContentLoaded', function(){
   // Card badge icons — same shapes as the marker icons, but dark
   // navy on the yellow badge (matching the original list design),
   // replacing what used to be a plain number.
-  var CARD_ICONS = ['🔍', '👤', '📅', '⭐'];
+  var CARD_ICONS = [
+    '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#0D1B2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"></circle><path d="M20 20l-5.5-5.5"></path></svg>',
+    '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#0D1B2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"></path><path d="M4 6h.01M4 12h.01M4 18h.01"></path></svg>',
+    '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#0D1B2A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>',
+    '<svg viewBox="0 0 24 24" width="14" height="14" fill="#0D1B2A" stroke="none"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg>'
+  ];
 
   pts.forEach(function (pt, idx) {
     var g = document.createElementNS(SVGNS, 'g');
