@@ -614,7 +614,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
 .fab-top svg{width:18px;height:18px;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* TOAST */
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:linear-gradient(135deg,#FFD400,#FFE566);color:#0D1B2A;padding:14px 22px;border-radius:16px;font-size:.9rem;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.2);z-index:200;transition:transform .4s cubic-bezier(0,0,0,1),opacity .4s ease;display:flex;gap:12px;align-items:center;min-width:280px;overflow:hidden}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:linear-gradient(135deg,#FFD400,#FFE566);color:#0D1B2A;padding:14px 22px;border-radius:16px;font-size:.9rem;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.2);z-index:10000;transition:transform .4s cubic-bezier(0,0,0,1),opacity .4s ease;display:flex;gap:12px;align-items:center;min-width:280px;overflow:hidden}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .toast-icon-wrap{width:32px;height:32px;border-radius:50%;background:#0D1B2A;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:2}
 .toast-icon-wrap svg{width:16px;height:16px;stroke:#FFD400;stroke-width:3}
@@ -887,10 +887,9 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
       <svg viewBox="0 0 24 24" width="34" height="34" style="position:absolute;top:96px;left:56px;opacity:.14;animation:yfloat 5.3s ease-in-out infinite .1s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4z"/><path d="M6.5 8v11"/><path d="M9.5 8v11"/><path d="M12.5 8v11"/><path d="M15.5 8v9"/><path d="M18 8v6"/></svg>
       <svg viewBox="0 0 24 24" width="30" height="30" style="position:absolute;top:210px;right:44px;opacity:.13;animation:yfloat 4.7s ease-in-out infinite .6s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13.5c-2-1.4-3-3.2-3-5.4 0-1.6.7-3.1 2-4.3.6-.5 1.4-.5 2 0 1.3 1.2 2 2.7 2 4.3 0 2.2-1 4-3 5.4Z"/><path d="M12 13.5c1.5-1.9 3.6-2.9 6.2-3-.1 2-.9 3.7-2.5 5-1.6 1.3-3.7 1.8-6.1 1.5"/><path d="M12 13.5c-1.5-1.9-3.6-2.9-6.2-3 .1 2 .9 3.7 2.5 5 1.6 1.3 3.7 1.8 6.1 1.5"/><path d="M4.5 18.5c2.1 1.3 4.7 2 7.5 2s5.4-.7 7.5-2"/></svg>
       <svg viewBox="0 0 24 24" width="26" height="26" style="position:absolute;top:52px;right:110px;opacity:.12;animation:yfloat 6.1s ease-in-out infinite .35s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="17.5" rx="8" ry="2.5"/><ellipse cx="12" cy="12" rx="6" ry="2.2"/><ellipse cx="12" cy="7" rx="4" ry="2"/></svg>
-      <svg viewBox="0 0 24 24" width="36" height="36" style="position:absolute;top:280px;left:22px;opacity:.13;animation:yfloat 5.6s ease-in-out infinite .5s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-4.5"/><path d="M9 8V2.5"/><path d="M15 8V2.5"/><path d="M6 8h12v4a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Z"/></svg>
-      <svg viewBox="0 0 24 24" width="19" height="19" style="position:absolute;top:150px;left:130px;opacity:.11;animation:yfloat 4.3s ease-in-out infinite .2s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <svg viewBox="0 0 24 24" width="36" height="36" style="position:absolute;top:280px;left:6px;opacity:.13;animation:yfloat 5.6s ease-in-out infinite .5s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-4.5"/><path d="M9 8V2.5"/><path d="M15 8V2.5"/><path d="M6 8h12v4a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V8Z"/></svg>
       <svg viewBox="0 0 24 24" width="22" height="22" style="position:absolute;top:20px;left:190px;opacity:.11;animation:yfloat 4.9s ease-in-out infinite .55s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.2"/></svg>
-      <svg viewBox="0 0 24 24" width="26" height="26" style="position:absolute;top:250px;right:150px;opacity:.11;animation:yfloat 5.1s ease-in-out infinite .15s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+      <svg viewBox="0 0 24 24" width="26" height="26" style="position:absolute;top:180px;left:210px;opacity:.11;animation:yfloat 5.1s ease-in-out infinite .15s;z-index:0" fill="none" stroke="#0D1B2A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
 
       <h2 style="font-size:23px;font-weight:800;letter-spacing:-.02em;color:#0D1B2A;line-height:1.16;margin:0 0 6px;position:relative;z-index:2">Home Solutions Made Easy</h2>
       <p class="rv" style="font-size:13px;color:#6b6019;margin:0 auto 28px;max-width:280px;position:relative;z-index:2">Connecting with verified professionals near you.</p>
@@ -1041,7 +1040,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
     </div>
 
     <!-- EARLY BENEFITS -->
-    <div class="merge-panel" data-radius="34" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFE000;background-image:radial-gradient(rgba(13,27,42,.06) 1.3px,transparent 1.3px);background-size:18px 18px;padding:86px 22px 110px;text-align:center;margin-top:-40px">
+    <div class="merge-panel" data-radius="34" id="mobileEarlyBenefits" style="position:sticky;top:0;border-radius:34px 34px 0 0;background:#FFE000;background-image:radial-gradient(rgba(13,27,42,.06) 1.3px,transparent 1.3px);background-size:18px 18px;padding:86px 22px 110px;text-align:center;margin-top:-40px">
       <span class="rv" style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#fff;background:#0D1B2A;padding:7px 14px;border-radius:999px"><span style="width:6px;height:6px;border-radius:50%;background:#FFD400"></span>Early Adopter Benefits</span>
       <h2 class="rv" style="font-size:22px;font-weight:800;color:#0D1B2A;letter-spacing:-.01em;margin:14px 0 6px">Onboard Early, Unlock Perks!</h2>
       <p class="rv" style="font-size:12.5px;color:#6b6019;margin:0 0 20px">Got skills? Submit your Provider Onboarding Form NOW and unlock exclusive perks during launch.</p>
@@ -1136,10 +1135,10 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
             <div style="font-size:12px;font-weight:600;color:#fff;margin-bottom:12px">Overview</div>
             <div style="display:flex;flex-direction:column;gap:9px">
               <a href="#mobileStory" style="font-size:11.5px;color:#9eabbd;text-decoration:none">About</a>
-              <a href="#mobileProviders" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Provider Benefits</a>
+              <a href="#mobileEarlyBenefits" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Provider Benefits</a>
               <a href="#mobileHow" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Customer Journey</a>
               <a href="#mobileServices" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Service List</a>
-              <a href="#providerForm" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Become a Provider</a>
+              <a href="#mobileProviders" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Become a Provider</a>
             </div>
           </div>
         </div>
@@ -2389,7 +2388,7 @@ function closeProviderModal(){
   document.body.style.width = '';
   document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
-  window.scrollTo(0, _providerScrollY);
+  window.scrollTo({top: _providerScrollY, left: 0, behavior: 'instant'});
   var form = document.getElementById('providerForm');
   if(form && _providerFormHome){
     if(_providerFormHome.next) _providerFormHome.parent.insertBefore(form, _providerFormHome.next);
@@ -2436,7 +2435,7 @@ function closeFeedbackModal(){
   document.body.style.width = '';
   document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
-  window.scrollTo(0, _feedbackScrollY);
+  window.scrollTo({top: _feedbackScrollY, left: 0, behavior: 'instant'});
   var form = document.getElementById('feedbackForm');
   if(form && _feedbackFormHome){
     if(_feedbackFormHome.next) _feedbackFormHome.parent.insertBefore(form, _feedbackFormHome.next);
