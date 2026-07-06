@@ -1647,6 +1647,10 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
 
 <script>
 const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxBlmEcE03lNwZuAzmCLWRKWJd-0L91nlcsAOO4FAMSheqiast9F3oHSb1A4EZ8vty_/exec";
+// Same breakpoint the site's own layout switch uses (#mobileStory
+// shows below 760px) — reused here so every form submission can
+// tag which experience it was filled out on.
+function getSubmitSource(){ return window.innerWidth <= 760 ? 'Mobile' : 'Web'; }
 
 /* ---- Service columns: JS-driven scroll, fully contained ---- */
 (function(){
@@ -1901,7 +1905,7 @@ function showToast(msg){
 
     const original=submitBtn.textContent;
     submitBtn.textContent='Submitting...'; submitBtn.disabled=true;
-    const data={formType:'provider_signup'};
+    const data={formType:'provider_signup',source:getSubmitSource()};
     new FormData(form).forEach((v,k)=>data[k]=v);
     try{
       if(typeof SHEET_ENDPOINT!=='undefined' && SHEET_ENDPOINT.startsWith('http')){
@@ -1944,7 +1948,7 @@ function showToast(msg){
     const orig = btn.textContent; btn.textContent='...'; btn.disabled=true;
     try{
       if(typeof SHEET_ENDPOINT!=='undefined' && SHEET_ENDPOINT.startsWith('http')){
-        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'early_access',email:val})});
+        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'early_access',source:getSubmitSource(),email:val})});
       }
       showToast('You are on the list. We will be in touch.');
       form.reset();
@@ -1960,7 +1964,7 @@ document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm
     const btn=form.querySelector('button[type=submit]');
     const original=btn.textContent;
     btn.textContent='Submitting...';btn.disabled=true;
-    const data={formType:form.dataset.form};
+    const data={formType:form.dataset.form,source:getSubmitSource()};
     new FormData(form).forEach((v,k)=>data[k]=v);
     try{
       if(SHEET_ENDPOINT.startsWith('http')){
@@ -1998,7 +2002,7 @@ document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm
 
     const btn = form.querySelector('button[type=submit]');
     const orig = btn.textContent; btn.textContent='Submitting...'; btn.disabled=true;
-    const data = {formType:'feedback'};
+    const data = {formType:'feedback',source:getSubmitSource()};
     new FormData(form).forEach((v,k) => data[k]=v);
     try{
       if(SHEET_ENDPOINT.startsWith('http')){
@@ -2053,7 +2057,7 @@ document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm
     const orig = btn.textContent; btn.textContent='...'; btn.disabled=true;
     try{
       if(typeof SHEET_ENDPOINT!=='undefined' && SHEET_ENDPOINT.startsWith('http')){
-        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'limited_slots',email:val})});
+        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'limited_slots',source:getSubmitSource(),email:val})});
       }
       showToast('You are on the list. We will be in touch.');
       form.reset();
@@ -2091,7 +2095,7 @@ document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm
     const orig = btn.textContent; btn.textContent='...'; btn.disabled=true;
     try{
       if(typeof SHEET_ENDPOINT!=='undefined' && SHEET_ENDPOINT.startsWith('http')){
-        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'early_access',email:val})});
+        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'early_access',source:getSubmitSource(),email:val})});
       }
       showToast('You are on the list. We will be in touch.');
       form.reset();
@@ -2123,7 +2127,7 @@ document.querySelectorAll('form[data-form]:not(#providerForm):not(#heroEarlyForm
     const orig = btn.textContent; btn.textContent='...'; btn.disabled=true;
     try{
       if(typeof SHEET_ENDPOINT!=='undefined' && SHEET_ENDPOINT.startsWith('http')){
-        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'limited_slots',email:val})});
+        await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:'limited_slots',source:getSubmitSource(),email:val})});
       }
       showToast('You are on the list. We will be in touch.');
       form.reset();
