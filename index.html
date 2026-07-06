@@ -249,7 +249,7 @@ a{text-decoration:none;color:inherit}
    loop is seamless; add more <img> tags to BOTH copies to extend. */
 .pro-marquee{width:100vw;margin-left:calc(-50vw + 50%);overflow:hidden}
 .pro-marquee-track{display:flex;align-items:center;gap:0;width:max-content;animation:proMarquee 16s linear infinite}
-.pro-marquee-track .pm-strip{flex:none;height:90px;width:auto;display:block}
+.pro-marquee-track .pm-strip{flex:none;height:75px;width:auto;display:block}
 @keyframes proMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* Provider cards "roll in" from outside as the user scrolls —
@@ -904,7 +904,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
            infinitely. To swap the image, just replace
            images/3d_strip.png (both copies below). -->
       <div class="pro-marquee rv-s" style="margin-top:48px;position:relative;z-index:1">
-        <div class="pro-marquee-track" style="animation-duration:57s">
+        <div class="pro-marquee-track" style="animation-duration:36s">
           <img class="pm-strip" src="images/3d_strip.png" alt="Our service providers at work">
           <!-- duplicate copy, keep identical, for the seamless loop -->
           <img class="pm-strip" src="images/3d_strip.png" alt="Our service providers at work">
@@ -1133,7 +1133,7 @@ footer{background:var(--navy);color:#9eabbd;padding:54px 0 28px;border-top:1px s
           </div>
           <div>
             <div style="font-size:12px;font-weight:600;color:#fff;margin-bottom:12px">Overview</div>
-            <div style="display:flex;flex-direction:column;gap:9px">
+            <div class="mobile-footer-nav" style="display:flex;flex-direction:column;gap:9px">
               <a href="#mobileStory" style="font-size:11.5px;color:#9eabbd;text-decoration:none">About</a>
               <a href="#mobileEarlyBenefits" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Provider Benefits</a>
               <a href="#mobileHow" style="font-size:11.5px;color:#9eabbd;text-decoration:none">Customer Journey</a>
@@ -2731,6 +2731,35 @@ function goToProviderCta(){
   btn.classList.add('cta-focus-flash');
   setTimeout(function(){ btn.classList.remove('cta-focus-flash'); }, 1700);
 }
+</script>
+<!-- Mobile footer "Overview" links — native #hash anchor jumps were
+     landing back at/near the footer instead of the target section.
+     This page is built from many stacked position:sticky panels,
+     which is a known source of unreliable native anchor-scrolling
+     in combination with html{scroll-behavior:smooth}. Driving the
+     scroll manually with scrollIntoView sidesteps that entirely. -->
+<script>
+(function(){
+  var nav = document.querySelector('.mobile-footer-nav');
+  console.log('[mobile-nav-debug] setup ran. nav found:', !!nav);
+  if(!nav) return;
+  var links = nav.querySelectorAll('a[href^="#"]');
+  console.log('[mobile-nav-debug] links found:', links.length);
+  links.forEach(function(link){
+    link.addEventListener('click', function(e){
+      var id = link.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      console.log('[mobile-nav-debug] clicked href=#' + id, 'target found:', !!target);
+      if(!target) return; // let the browser try its default behavior
+      e.preventDefault();
+      var rect = target.getBoundingClientRect();
+      var y = rect.top + window.scrollY;
+      console.log('[mobile-nav-debug] rect.top=' + rect.top, 'scrollY=' + window.scrollY, 'computed target y=' + y);
+      window.scrollTo({ top: y, left: 0, behavior: 'auto' });
+      console.log('[mobile-nav-debug] after scrollTo, window.scrollY=' + window.scrollY);
+    });
+  });
+})();
 </script>
 </body>
 </html>
